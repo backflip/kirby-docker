@@ -12,5 +12,5 @@ RUN composer install \
 
 FROM trafex/php-nginx:3:11:1
 
-COPY  --from=build /app/kirby.conf /etc/nginx/conf.d/default.conf
+COPY  --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --chown=nobody --from=build /app /var/www/html
