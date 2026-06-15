@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'url' => 'http://localhost:8080'
+    'url' => 'https://kirby-docker.fly.dev',
+    // 'url' => 'http://localhost:8080'
 ];
