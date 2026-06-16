@@ -4,8 +4,10 @@ Docker setup based on [plainkit](https://github.com/getkirby/plainkit) and [traf
 
 ## Build
 
+Pass URL as build argument:
+
 ```sh
-docker build . -t kirby
+docker build . -t kirby --build-arg APP_URL=http://localhost:8080
 ```
 
 ## Run
@@ -14,21 +16,17 @@ docker build . -t kirby
 docker run -p 8080:8080 -v $(pwd)/data:/var/www/html/data -t kirby
 ```
 
+Open http://localhost:8080
+
 ## Fly
 
-1. Set up volume:
+1. Launch (will create app and volume based on `fly.toml`):
 
     ```sh
-    fly volume create kirby_docker_data -r fra -n
+    fly launch
     ```
 
-2. Deploy:
-
-    ```sh
-    fly deploy
-    ```
-
-3. Copy local files to volume and set permissions:
+2. Copy local files to volume and set permissions:
 
     ```sh
     fly sftp put -R data/accounts /var/www/html/data/accounts
