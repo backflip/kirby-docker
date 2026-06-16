@@ -1,8 +1,10 @@
 <?php
 
+use Kirby\Cms\App;
+
 require 'kirby/bootstrap.php';
 
-$kirby = new Kirby([
+$kirby = new App([
     'roots' => [
         'content'  => __DIR__ . '/data/content',
         'accounts' => __DIR__ . '/data/accounts',
