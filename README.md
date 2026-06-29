@@ -16,6 +16,12 @@ docker build . -t kirby --build-arg APP_URL=http://localhost:8080
 docker run -p 8080:8080 -v $(pwd)/data:/var/www/html/data -t kirby
 ```
 
+Without Docker (assuming `composer` is available and dependencies have been installed):
+
+```sh
+composer start
+```
+
 Open http://localhost:8080
 
 ## Fly
