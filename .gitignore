@@ -53,4 +53,5 @@ Icon
 # Extension of default setup
 # -------------CUSTOM-------------
 
-data
+/data
+/vendor
