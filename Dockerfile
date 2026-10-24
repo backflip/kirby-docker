@@ -1,4 +1,4 @@
-FROM composer:2.10.1 AS build
+FROM composer:2.10.3 AS build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ RUN composer install \
   --no-progress \
   --ignore-platform-req=ext-gd
 
-FROM trafex/php-nginx:3.11.1
+FROM trafex/php-nginx:3.12.0
 
 COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
 
